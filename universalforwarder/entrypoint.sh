@@ -119,7 +119,7 @@ EOF
     done
   fi
 
-  sudo -HEu ${SPLUNK_USER} tail -n 0 -f ${SPLUNK_HOME}/var/log/splunk/splunkd_stderr.log &
+  sudo -HEu ${SPLUNK_USER} tail -n 0 -f ${SPLUNK_HOME}/var/log/splunk/splunkd_stderr.log -f ${SPLUNK_HOME}/var/log/splunk/splunkd.log &
   wait
 else
   "$@"
