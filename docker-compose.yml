@@ -1,0 +1,15 @@
+vsplunk:
+  image: busybox
+  volumes:
+    - /opt/splunk/etc
+    - /opt/splunk/var
+
+splunk:
+  build: splunklight/
+  hostname: splunk
+  volumes_from:
+    - vsplunk
+  ports:
+    - 8000:8000
+  environment:
+    SPLUNK_START_ARGS: '--accept-license'
