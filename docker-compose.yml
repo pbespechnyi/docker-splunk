@@ -11,5 +11,7 @@ splunk:
     - vsplunk
   ports:
     - 80:8000
+    - 9997:9997
   environment:
-    SPLUNK_START_ARGS: '--accept-license'
+    SPLUNK_START_ARGS: --accept-license --answer-yes
+    SPLUNK_ENABLE_LISTEN: 9997
